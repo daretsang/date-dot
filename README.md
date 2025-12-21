@@ -1,2 +1,1 @@
-# date-dot
 A collaborative web mapping project that visualizes curated date spots to help users discover and plan dates.
