@@ -1,22 +1,61 @@
 <!doctype html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <title>Gantt Chart</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-      body { font-family: Arial, Helvetica, sans-serif; margin: 20px; }
-      #chart_div { width: 100%; max-width: 1200px; }
-      h1 { font-size: 20px; margin-bottom: 8px; }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+      }
+
+      #chart_div {
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      header {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin: 0;
+      }
+
+      .back-button {
+        background-color: #333;
+        /* A neutral dark color to contrast the pink map button */
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        transition: background 0.3s ease;
+      }
+
+      .back-button:hover {
+        background-color: #555;
+      }
     </style>
   </head>
+
   <body>
-    <h1>Relationship Timeline (Gantt Chart)</h1>
+    <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h1>Relationship Timeline (Gantt Chart)</h1>
+      <a href="/" class="back-button">
+        Back to Map 📍
+      </a>
+    </header>
     <div id="chart_div"></div>
 
     <script>
-      google.charts.load('current', {'packages':['gantt']});
+      google.charts.load('current', { 'packages': ['gantt'] });
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
@@ -31,21 +70,21 @@
         data.addColumn('string', 'Dependencies');
 
         data.addRows([
-          ['finish_school','Finish School','Personal', new Date(2026,0,1),   new Date(2026,4,31), null, 0, null],
-          ['job_hunt','Job Hunt (Need $ for those Date$)','Career',           new Date(2026,2,1),   new Date(2026,6,31), null, 0, null],
-          ['scouting','Scouting Potential Partners','Sports', new Date(2026,7,1), new Date(2026,9,31), null, 0, null],
-          ['cuffing','Cuffing Season','Social',       new Date(2026,10,1),  new Date(2027,1,13), null, 0, null],
-          ['cuffed','Cuffed','Relationship',          new Date(2027,1,14),  new Date(2027,1,28), null, 0, 'cuffing'],
-          ['dating1','Dating Phase 1','Dating',       new Date(2027,2,1),   new Date(2029,2,31), null, 0, null],
-          ['dating2','Dating Phase 2','Dating',       new Date(2028,2,1),   new Date(2029,2,31), null, 0, 'dating1'],
-          ['proposal','Proposal','Milestone',          new Date(2029,3,1),   new Date(2029,3,1),  null, 0, 'dating2'],
-          ['engagement','Engagement Period (approx)','Planning', new Date(2029,3,2), new Date(2029,8,30), null, 0, 'proposal'],
-          ['housing','Explore housing & down payment','Planning', new Date(2029,3,2), new Date(2029,8,30), null, 0, 'proposal'],
-          ['wedding','Wedding Window','Milestone',     new Date(2029,9,1),   new Date(2030,2,31), null, 0, 'engagement'],
-          ['move_in','Newly Married: Move In','Home',  new Date(2030,3,1),   new Date(2030,3,1),  null, 0, 'wedding'],
-          ['file_taxes','File taxes & honeymoon','Admin', new Date(2030,3,1), new Date(2030,3,30), null, 0, 'move_in'],
-          ['marriage_phase1','Marriage Phase 1','Family', new Date(2030,4,1), new Date(2031,4,31), null, 0, 'file_taxes'],
-          ['have_kids','Have kids (if desired)','Family', new Date(2031,5,1), new Date(2036,5,30), null, 0, 'marriage_phase1']
+          ['finish_school', 'Finish School', 'Personal', new Date(2026, 0, 1), new Date(2026, 4, 31), null, 0, null],
+          ['job_hunt', 'Job Hunt (Need $ for those Date$)', 'Career', new Date(2026, 2, 1), new Date(2026, 6, 31), null, 0, null],
+          ['scouting', 'Scouting Potential Partners', 'Sports', new Date(2026, 7, 1), new Date(2026, 9, 31), null, 0, null],
+          ['cuffing', 'Cuffing Season', 'Social', new Date(2026, 10, 1), new Date(2027, 1, 13), null, 0, null],
+          ['cuffed', 'Cuffed', 'Relationship', new Date(2027, 1, 14), new Date(2027, 1, 28), null, 0, 'cuffing'],
+          ['dating1', 'Dating Phase 1', 'Dating', new Date(2027, 2, 1), new Date(2029, 2, 31), null, 0, null],
+          ['dating2', 'Dating Phase 2', 'Dating', new Date(2028, 2, 1), new Date(2029, 2, 31), null, 0, 'dating1'],
+          ['proposal', 'Proposal', 'Milestone', new Date(2029, 3, 1), new Date(2029, 3, 1), null, 0, 'dating2'],
+          ['engagement', 'Engagement Period (approx)', 'Planning', new Date(2029, 3, 2), new Date(2029, 8, 30), null, 0, 'proposal'],
+          ['housing', 'Explore housing & down payment', 'Planning', new Date(2029, 3, 2), new Date(2029, 8, 30), null, 0, 'proposal'],
+          ['wedding', 'Wedding Window', 'Milestone', new Date(2029, 9, 1), new Date(2030, 2, 31), null, 0, 'engagement'],
+          ['move_in', 'Newly Married: Move In', 'Home', new Date(2030, 3, 1), new Date(2030, 3, 1), null, 0, 'wedding'],
+          ['file_taxes', 'File taxes & honeymoon', 'Admin', new Date(2030, 3, 1), new Date(2030, 3, 30), null, 0, 'move_in'],
+          ['marriage_phase1', 'Marriage Phase 1', 'Family', new Date(2030, 4, 1), new Date(2031, 4, 31), null, 0, 'file_taxes'],
+          ['have_kids', 'Have kids (if desired)', 'Family', new Date(2031, 5, 1), new Date(2036, 5, 30), null, 0, 'marriage_phase1']
         ]);
 
         var options = {
@@ -61,4 +100,5 @@
       }
     </script>
   </body>
+
 </html>
