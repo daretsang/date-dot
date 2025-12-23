@@ -11,17 +11,29 @@ function App() {
   ];
 
   return (
-    <div style={{ height: '100vh', width: '100%' }}>
-      <h1>DateDot: Our Spots</h1>
-      <MapContainer center={position} zoom={13} scrollWheelZoom={true} style={{ height: '80vh', width: '100%' }}>
+    <div className="app-wrapper">
+      <header className="map-header">
+        <h1>DateDot: Our Spots</h1>
+        <a href="/chart.html" className="chart-button">
+          View Relationship Timeline 📅
+        </a>
+      </header>
+
+      <MapContainer
+        center={position}
+        zoom={12}
+        className="map-container"
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {dateSpots.map(spot => (
+
+        {dateSpots.map((spot) => (
           <Marker key={spot.id} position={spot.pos}>
             <Popup>
-              <strong>{spot.name}</strong> <br /> {spot.note}
+              <strong>{spot.name}</strong> <br />
+              {spot.note}
             </Popup>
           </Marker>
         ))}

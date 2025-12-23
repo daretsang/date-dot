@@ -1,0 +1,61 @@
+/* Ensure the page takes up the full screen height */
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.map-container {
+  height: 80vh; /* Map takes up 80% of the screen height */
+  width: 100%;  /* Map takes up 100% of the width */
+  margin-top: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map-container {
+  height: 75vh; /* 75% of the viewport height */
+  width: 100%;  /* Now it fits perfectly because of border-box */
+  max-width: 1200px; /* Optional: prevents the map from getting too wide on huge monitors */
+  border: 2px solid #575757; /* Maybe a "Date Spot" pink color? */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.map-header {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chart-button {
+  background-color: #ed2d7b; /* The same pink as your map border */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none; /* Removes the underline */
+  font-weight: bold;
+  font-family: sans-serif;
+  transition: background 0.3s ease;
+}
+
+.chart-button:hover {
+  background-color: #c2185b; /* Darker pink when hovering */
+}
