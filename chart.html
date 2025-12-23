@@ -70,21 +70,18 @@
         data.addColumn('string', 'Dependencies');
 
         data.addRows([
-          ['finish_school', 'Finish School', 'Personal', new Date(2026, 0, 1), new Date(2026, 4, 31), null, 0, null],
-          ['job_hunt', 'Job Hunt (Need $ for those Date$)', 'Career', new Date(2026, 2, 1), new Date(2026, 6, 31), null, 0, null],
-          ['scouting', 'Scouting Potential Partners', 'Sports', new Date(2026, 7, 1), new Date(2026, 9, 31), null, 0, null],
-          ['cuffing', 'Cuffing Season', 'Social', new Date(2026, 10, 1), new Date(2027, 1, 13), null, 0, null],
-          ['cuffed', 'Cuffed', 'Relationship', new Date(2027, 1, 14), new Date(2027, 1, 28), null, 0, 'cuffing'],
-          ['dating1', 'Dating Phase 1', 'Dating', new Date(2027, 2, 1), new Date(2029, 2, 31), null, 0, null],
-          ['dating2', 'Dating Phase 2', 'Dating', new Date(2028, 2, 1), new Date(2029, 2, 31), null, 0, 'dating1'],
-          ['proposal', 'Proposal', 'Milestone', new Date(2029, 3, 1), new Date(2029, 3, 1), null, 0, 'dating2'],
-          ['engagement', 'Engagement Period (approx)', 'Planning', new Date(2029, 3, 2), new Date(2029, 8, 30), null, 0, 'proposal'],
-          ['housing', 'Explore housing & down payment', 'Planning', new Date(2029, 3, 2), new Date(2029, 8, 30), null, 0, 'proposal'],
-          ['wedding', 'Wedding Window', 'Milestone', new Date(2029, 9, 1), new Date(2030, 2, 31), null, 0, 'engagement'],
-          ['move_in', 'Newly Married: Move In', 'Home', new Date(2030, 3, 1), new Date(2030, 3, 1), null, 0, 'wedding'],
-          ['file_taxes', 'File taxes & honeymoon', 'Admin', new Date(2030, 3, 1), new Date(2030, 3, 30), null, 0, 'move_in'],
-          ['marriage_phase1', 'Marriage Phase 1', 'Family', new Date(2030, 4, 1), new Date(2031, 4, 31), null, 0, 'file_taxes'],
-          ['have_kids', 'Have kids (if desired)', 'Family', new Date(2031, 5, 1), new Date(2036, 5, 30), null, 0, 'marriage_phase1']
+          ['finish_school', '🎓 Finish School', 'Personal', new Date(2026, 0, 1), new Date(2026, 5, 30), null, 0, null],
+          ['job_hunt', '💼 Job Hunt', 'Career', new Date(2026, 3, 1), new Date(2026, 6, 31), null, 0, null],
+          ['scout_shortlist', '🔎 Scout & Shortlist Candidates', 'Search', new Date(2026, 7, 1), new Date(2027, 1, 13), null, 0, null],
+          ['get_cuffed', '💘 Get Cuffed', 'Relationship', new Date(2027, 1, 14), new Date(2027, 1, 28), null, 0, 'scout_shortlist'],
+          ['dating1', '🧪 Dating Phase 1 — Compatibility Testing', 'Dating', new Date(2027, 2, 1), new Date(2028, 2, 31), null, 0, 'get_cuffed'],
+          ['dating2', '🔥 Dating Phase 2 — Stress Testing', 'Dating', new Date(2028, 2, 1), new Date(2029, 3, 30), null, 0, 'dating1'],
+          ['proposal', '💍 Marriage Proposal', 'Milestone', new Date(2029, 4, 1), new Date(2029, 4, 1), null, 0, 'dating2'],
+          ['engagement', '💑 Engagement Period', 'Planning', new Date(2029, 4, 2), new Date(2030, 3, 30), null, 0, 'proposal'],
+          ['wedding', '💒 Wedding', 'Milestone', new Date(2030, 4, 1), new Date(2030, 4, 1), null, 0, 'engagement'],
+          ['move_honeymoon', '🏠💖 Move in & Honeymoon', 'Home/Honeymoon', new Date(2030, 4, 2), new Date(2030, 5, 1), null, 0, 'wedding'],
+          ['marriage_phase1', '👫 Marriage Phase 1 — Childless', 'Family', new Date(2030, 4, 1), new Date(2031, 4, 31), null, 0, 'wedding'],
+          ['have_kids', '👶 Have kids (if desired)', 'Family', new Date(2031, 5, 1), new Date(2036, 5, 30), null, 0, 'marriage_phase1']
         ]);
 
         var options = {
